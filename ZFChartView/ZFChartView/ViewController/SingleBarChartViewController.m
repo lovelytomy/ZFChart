@@ -102,8 +102,8 @@
 
 - (NSArray *)gradientColorArrayInBarChart:(ZFBarChart *)barChart{
     ZFGradientAttribute * gradientAttribute = [[ZFGradientAttribute alloc] init];
-    gradientAttribute.colors = @[(id)ZFRed.CGColor, (id)ZFWhite.CGColor];
-    gradientAttribute.locations = @[@(0.5), @(0.99)];
+    gradientAttribute.colors = @[(id)[UIColor colorWithRed:143/255.0 green:14/255.0 blue:229/255.0 alpha:1.0].CGColor, (id)ZFColor(255, 255, 255, 1.0).CGColor];
+    gradientAttribute.locations = @[@(0.12), @(0.99)];
     
     return [NSArray arrayWithObjects:gradientAttribute, nil];
 }
