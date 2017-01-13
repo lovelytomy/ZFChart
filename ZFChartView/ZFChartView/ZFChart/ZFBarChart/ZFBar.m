@@ -47,7 +47,8 @@
  *  @return UIBezierPath
  */
 - (UIBezierPath *)noFill{
-    UIBezierPath * bezier = [UIBezierPath bezierPathWithRect:CGRectMake(0, _barHeightLimit, self.frame.size.width, 0)];
+//    UIBezierPath * bezier = [UIBezierPath bezierPathWithRect:CGRectMake(0, _barHeightLimit, self.frame.size.width, 0)];
+    UIBezierPath *bezier=[UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, _barHeightLimit, self.frame.size.width, 0) cornerRadius:self.frame.size.width];
     return bezier;
 }
 
@@ -60,7 +61,8 @@
     CGFloat currentHeight = _barHeightLimit * self.percent;
     _endYPos = _barHeightLimit - currentHeight;
     
-    UIBezierPath * bezier = [UIBezierPath bezierPathWithRect:CGRectMake(0, _endYPos, self.frame.size.width, currentHeight)];
+//    UIBezierPath * bezier = [UIBezierPath bezierPathWithRect:CGRectMake(0, _endYPos, self.frame.size.width, currentHeight)];
+    UIBezierPath *bezier=[UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, _endYPos, self.frame.size.width, currentHeight) cornerRadius:self.frame.size.width];
     return bezier;
 }
 
