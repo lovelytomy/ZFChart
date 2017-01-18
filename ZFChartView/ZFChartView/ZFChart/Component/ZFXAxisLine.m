@@ -51,6 +51,7 @@
 
 - (void)setUp{
     _axisColor = ZFBlack;
+//    _axisColor = [UIColor clearColor];
 }
 
 - (instancetype)initWithFrame:(CGRect)frame direction:(kAxisDirection)direction{
@@ -93,6 +94,7 @@
 - (CAShapeLayer *)xAxisLineShapeLayer{
     CAShapeLayer * xAxisLineLayer = [CAShapeLayer layer];
     xAxisLineLayer.fillColor = _axisColor.CGColor;
+//    xAxisLineLayer.fillColor = [UIColor whiteColor].CGColor;
     xAxisLineLayer.path = [self drawXAxisLine].CGPath;
     
     if (_isAnimated) {

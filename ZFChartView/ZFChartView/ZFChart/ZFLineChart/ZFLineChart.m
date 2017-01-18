@@ -525,7 +525,7 @@
 }
 
 - (void)setBackgroundColor:(UIColor *)backgroundColor{
-    self.genericAxis.axisLineBackgroundColor = backgroundColor;;
+    self.genericAxis.axisLineBackgroundColor = backgroundColor;
 }
 
 - (void)setXAxisColor:(UIColor *)xAxisColor{

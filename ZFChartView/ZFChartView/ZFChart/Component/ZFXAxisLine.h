@@ -60,5 +60,6 @@
  *  重绘
  */
 - (void)strokePath;
+-(void)setAxisColor:(UIColor *)axisColor;
 
 @end

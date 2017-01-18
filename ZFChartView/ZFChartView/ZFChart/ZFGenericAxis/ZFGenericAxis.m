@@ -65,11 +65,13 @@
 - (void)drawAxisLine{
     //x轴
     self.xAxisLine = [[ZFXAxisLine alloc] initWithFrame:self.bounds direction:kAxisDirectionVertical];
+    self.xAxisLine.axisColor=[UIColor redColor];//修改x轴线条颜色
     self.xAxisLine.backgroundColor = _axisLineBackgroundColor;
     [self addSubview:self.xAxisLine];
     
     //y轴
     self.yAxisLine = [[ZFYAxisLine alloc] initWithFrame:CGRectMake(0, 0, ZFAxisLineStartXPos, self.bounds.size.height) direction:kAxisDirectionVertical];
+    self.yAxisLine.axisColor=[UIColor redColor];
     self.yAxisLine.backgroundColor = _axisLineBackgroundColor;
     [self addSubview:self.yAxisLine];
 }
