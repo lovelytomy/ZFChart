@@ -114,6 +114,7 @@
             CGPoint label_center = CGPointMake(center_xPos, center_yPos);
             CGRect rect = [self.xLineNameArray[i] stringWidthRectWithSize:CGSizeMake(width + _groupPadding * 0.5, height) font:_xLineNameFont];
             ZFLabel * label = [[ZFLabel alloc] initWithFrame:CGRectMake(0, 0, rect.size.width, rect.size.height)];
+            label.backgroundColor=[UIColor redColor];
             label.text = self.xLineNameArray[i];
             label.textColor = _xLineNameColor;
             label.font = _xLineNameFont;
@@ -149,7 +150,7 @@
             
         }
         
-        label.textColor = _yLineValueColor;
+        label.textColor = _yLineValueColor;//设置Y轴label颜色
         label.font = _yLineValueFont;
         label.tag = ZFAxisLineValueLabelTag + i;
         [self.yAxisLine addSubview:label];

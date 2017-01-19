@@ -96,9 +96,13 @@
  *  渐变色
  */
 - (CALayer *)barGradientColor{
+    CGFloat currentHeight = _barHeightLimit * self.percent;
+    _endYPos = _barHeightLimit - currentHeight;
+//    NSLog(@"currentHeight:%f _barHeightLimit:%f _endYPosL:%f",currentHeight,_barHeightLimit,_endYPos);
+    
     CALayer * layer = [CALayer layer];
     CAGradientLayer * gradientLayer = [CAGradientLayer layer];
-    gradientLayer.frame = CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame));
+    gradientLayer.frame = CGRectMake(0, _endYPos, CGRectGetWidth(self.frame), currentHeight);
     gradientLayer.colors = _gradientAttribute.colors;
     gradientLayer.locations = _gradientAttribute.locations;
     gradientLayer.startPoint = _gradientAttribute.startPoint;

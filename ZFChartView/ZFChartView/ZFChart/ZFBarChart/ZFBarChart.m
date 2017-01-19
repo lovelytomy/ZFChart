@@ -162,7 +162,7 @@
             ZFBar * bar = self.barArray[i];
             //label的中心点
             CGPoint label_center = CGPointMake(bar.center.x, bar.endYPos + self.genericAxis.yAxisLine.yLineEndYPos);
-            CGRect rect = [self.genericAxis.xLineValueArray[i] stringWidthRectWithSize:CGSizeMake(_barWidth + _barPadding * 0.5, 30) font:self.valueOnChartFont];
+            CGRect rect = [self.genericAxis.xLineValueArray[i] stringWidthRectWithSize:CGSizeMake(_barWidth + _barPadding * 3.0, 30) font:self.valueOnChartFont];
             
             ZFPopoverLabel * popoverLabel = [[ZFPopoverLabel alloc] initWithFrame:CGRectMake(0, 0, rect.size.width + 10, rect.size.height + 10) direction:kAxisDirectionVertical];
             popoverLabel.groupIndex = 0;
@@ -177,6 +177,7 @@
             popoverLabel.isAnimated = self.isAnimated;
             popoverLabel.shadowColor = self.valueLabelShadowColor;
             popoverLabel.hidden = self.isShowAxisLineValue ? NO : YES;
+            popoverLabel.backgroundColor=ZFRed;
             [popoverLabel strokePath];
             [self.popoverLaberArray addObject:popoverLabel];
             [self.genericAxis addSubview:popoverLabel];
@@ -191,7 +192,7 @@
                 NSInteger groupIndex = i / [subObject count];
                 //label的中心点
                 CGPoint label_center = CGPointMake(bar.center.x, bar.endYPos + self.genericAxis.yAxisLine.yLineEndYPos);
-                CGRect rect = [valueArray[groupIndex][barIndex] stringWidthRectWithSize:CGSizeMake(_barWidth + _barPadding * 0.5, 30) font:self.valueOnChartFont];
+                CGRect rect = [valueArray[groupIndex][barIndex] stringWidthRectWithSize:CGSizeMake(_barWidth + _barPadding * 3, 30) font:self.valueOnChartFont];
                 
                 ZFPopoverLabel * popoverLabel = [[ZFPopoverLabel alloc] initWithFrame:CGRectMake(0, 0, rect.size.width + 10, rect.size.height + 10) direction:kAxisDirectionVertical];
                 popoverLabel.text = valueArray[groupIndex][barIndex];
@@ -204,6 +205,7 @@
                 popoverLabel.isAnimated = self.isAnimated;
                 popoverLabel.groupIndex = groupIndex;
                 popoverLabel.labelIndex = barIndex;
+//                popoverLabel.backgroundColor=ZFRed;
                 popoverLabel.shadowColor = self.valueLabelShadowColor;
                 popoverLabel.hidden = self.isShowAxisLineValue ? NO : YES;
                 [popoverLabel strokePath];

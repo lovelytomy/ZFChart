@@ -56,6 +56,8 @@
 //    self.barChart.axisLineValueColor = ZFWhite;
 //    self.barChart.backgroundColor = ZFPurple;
 //    self.barChart.isShowAxisArrows = NO;
+    self.barChart.xLineNameLabelToXAxisLinePadding = -60;//设置X轴文字与X轴之间的距离
+    self.barChart.valueLabelPattern=kPopoverLabelPatternBlank;
     [self.view addSubview:self.barChart];
     [self.barChart strokePath];
 }
@@ -63,7 +65,7 @@
 #pragma mark - ZFGenericChartDataSource
 
 - (NSArray *)valueArrayInGenericChart:(ZFGenericChart *)chart{
-    return @[@"123", @"256", @"300", @"283", @"490", @"236"];
+    return @[@"123CM", @"256CM", @"300CM", @"283CM", @"490CM", @"236CM"];
 }
 
 - (NSArray *)nameArrayInGenericChart:(ZFGenericChart *)chart{
@@ -96,9 +98,9 @@
 //    return 40.f;
 //}
 
-//- (id)valueTextColorArrayInBarChart:(ZFGenericChart *)barChart{
-//    return ZFBlue;
-//}
+- (id)valueTextColorArrayInBarChart:(ZFGenericChart *)barChart{//设置bar上文字的颜色
+    return ZFBlue;
+}
 
 - (NSArray *)gradientColorArrayInBarChart:(ZFBarChart *)barChart{
     ZFGradientAttribute * gradientAttribute = [[ZFGradientAttribute alloc] init];
